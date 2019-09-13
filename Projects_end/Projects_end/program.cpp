@@ -43,7 +43,7 @@ int main(){
 	book_id[1] = 123002;
 
 	string book_name[10];
-	book_name[0] = "testing Programming";
+	book_name[0] = "Programming";
 	book_name[1] = "Intro to IT";
 
 	string book_author[10];
@@ -235,41 +235,47 @@ void send_book(long lend_student_id[100],long lend_book_id[100],int lend_count,b
 void report(long student_id[10], string student_name[10],string student_faculty[10],string student_branch[10],long book_id[10],string book_name[10],string book_author[10],
 string book_publish[10],int book_year[100],long lend_student_id[100],long lend_book_id[100],bool lend_check[100],int student_id_count,
 int book_count ,int lend_count){
-	cout << "=================================================" << endl;
-	cout << "report lend book " << endl;
-	cout << "=================================================" << endl;
-	cout << "student_name\t\tbook_id\t\tcheck" << endl;
-	cout << "=================================================" << endl;
+	cout << "==================================================" << endl;
+	cout << "	report lend book" << endl;
+	cout << "==================================================" << endl;
+	cout << "student_name\t\tbook_id\t\t\tcheck" << endl;
+	cout << "==================================================" << endl;
 	for( int n = 0 ; n < lend_count;n++){
 		for(int i = 0;i < student_id_count; i++){
-			if(student_id[i] == lend_student_id[n]){
-				cout << student_name[i] << "\t\t" << lend_book_id[n] << "\t\t" << (bool)lend_check[n] << endl;
+			for(int a = 0;a < book_count; a++){
+			if(student_id[i] == lend_student_id[n] && lend_book_id[n] == book_id[a]){
+				cout << student_name[i] << "		" << book_name[a] << "		" << (bool)lend_check[n] << endl;
+				}
 			}
 		}
 	}
-	cout << "==================================================" << endl;
-	cout << "report student lend " << endl;
-	cout << "==================================================" << endl;
-	cout << "student_name\t\tbook_id\t\tcheck" << endl;
-	cout << "=================================================" << endl;
+	cout << "===================================================" << endl;
+	cout << "	report student lend" << endl;
+	cout << "===================================================" << endl;
+	cout << "student_name\t\tbook_id\t\t\tcheck" << endl;
+	cout << "===================================================" << endl;
 	for(int i = 0;i < student_id_count; i++){
 		for( int n = 0 ; n < lend_count;n++){
-			if(student_id[i] == lend_student_id[n]){
-				cout << student_name[i] << "\t\t" << lend_book_id[n] << "\t\t" <<(bool)lend_check[n] << endl;
+			for(int a = 0;a < book_count; a++){
+			if(student_id[i] == lend_student_id[n] && lend_book_id[n] == book_id[a]){
+				cout << student_name[i] << "		" << book_name[a] << "		" <<(bool)lend_check[n] << endl;
+				}
 			}
 		}	
-		cout << "---------------------------------------------" <<endl;
+		cout << "-------------------------------------------------" <<endl;
 	}
-	cout << "==================================================" << endl;
-	cout << "report book not yet lend " << endl;
-	cout << "==================================================" << endl;
-	cout << "student_name\t\tbook_id\t\tcheck" << endl;
-	cout << "=================================================" << endl;
+	cout << "====================================================" << endl;
+	cout << "	report book not yet lend" << endl;
+	cout << "====================================================" << endl;
+	cout << "student_name\t\tbook_id\t\t\tcheck" << endl;
+	cout << "====================================================" << endl;
 	for( int n = 0 ; n < lend_count;n++){
 		for(int i = 0;i < student_id_count; i++){
-			if(student_id[i] == lend_student_id[n]){
-				if(lend_check[n] == false){
-				cout << student_name[i] << "\t\t" << lend_book_id[n] << "\t\t" << (bool)lend_check[n] << endl;
+			for(int a = 0;a < book_count; a++){
+			if(student_id[i] == lend_student_id[n]  && lend_book_id[n] == book_id[a]){
+					if(lend_check[n] == false){	
+					cout << student_name[i] << "		" <<  book_name[a] << "		" << (bool)lend_check[n] << endl;
+					}
 				}
 			}
 		}
