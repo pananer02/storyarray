@@ -153,6 +153,7 @@ void lend_book(long student_id[10],long book_id[10],long lend_student_id[100],lo
 		}while(time < 3);
 		cout << "Your lend " << time << " time " << endl;
 	}
+	cout << endl;
 }
 
 void student_information (string student_name[10] , long student_id[10] , string student_faculty [10] , string student_branch[10], int &student_id_count)
@@ -174,7 +175,7 @@ void student_information (string student_name[10] , long student_id[10] , string
   student_id[student_id_count-1] = id;
   student_faculty[student_id_count-1] = faculty;
   student_branch[student_id_count-1] = branch;
-  
+  cout << endl;
 }
 
 void book_input(long book_id[10], string book_name[10], string book_author[10], string book_publish[10],int &book_count )
@@ -194,6 +195,7 @@ void book_input(long book_id[10], string book_name[10], string book_author[10], 
 	book_name[book_count-1]=name2;
 	book_author[book_count-1]=author;
 	book_publish[book_count-1]=publish;
+	cout << endl;
 }
 
 void send_book(long lend_student_id[100],long lend_book_id[100],int lend_count,bool lend_check[100]){
@@ -210,6 +212,7 @@ void send_book(long lend_student_id[100],long lend_book_id[100],int lend_count,b
 				cout << "========================" <<endl;
 				cout << " this book sent " <<endl;
 				cout << "========================" <<endl;
+				cout << endl;
 				return;
 			}
 			lend_check[n] = true;
@@ -226,6 +229,7 @@ void send_book(long lend_student_id[100],long lend_book_id[100],int lend_count,b
 		cout << "success send_book " <<endl;
 		cout << "==============================" << endl;
 	}
+	cout << endl;
 }
 
 void report(long student_id[10], string student_name[10],string student_faculty[10],string student_branch[10],long book_id[10],string book_name[10],string book_author[10],
@@ -256,4 +260,19 @@ int book_count ,int lend_count){
 		}	
 		cout << "---------------------------------------------" <<endl;
 	}
+	cout << "==================================================" << endl;
+	cout << "report book not yet lend " << endl;
+	cout << "==================================================" << endl;
+	cout << "student_name\t\tbook_id\t\tcheck" << endl;
+	cout << "=================================================" << endl;
+	for( int n = 0 ; n < lend_count;n++){
+		for(int i = 0;i < student_id_count; i++){
+			if(student_id[i] == lend_student_id[n]){
+				if(lend_check[n] == false){
+				cout << student_name[i] << "\t\t" << lend_book_id[n] << "\t\t" << (bool)lend_check[n] << endl;
+				}
+			}
+		}
+	}
+	cout << endl;
 }

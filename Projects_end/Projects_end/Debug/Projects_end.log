@@ -1,4 +1,4 @@
-﻿Build started 9/13/2019 4:21:57 PM.
+﻿Build started 9/13/2019 4:26:28 PM.
      1>Project "C:\Users\PANACHAITECHAPHAISAL\documents\visual studio 2010\Projects\Projects_end\Projects_end\Projects_end.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Projects_end.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -23,4 +23,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.88
+Time Elapsed 00:00:01.33
