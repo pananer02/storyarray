@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <iomanip>
 using namespace std;
 
 void lend_book(long student_id[10],long book_id[10],long lend_student_id[100],long lend_book_id[100],
@@ -158,24 +159,35 @@ void lend_book(long student_id[10],long book_id[10],long lend_student_id[100],lo
 
 void student_information (string student_name[10] , long student_id[10] , string student_faculty [10] , string student_branch[10], int &student_id_count)
 {
-  string name; 
-  int id;
-  string faculty; 
-  string branch;  
-  cout << "Enter Your name : ";
-  cin  >> name;
-  cout << "Enter Your student code : ";
-  cin  >> id;
-  cout << "Enter Your faculty :";
-  cin  >> faculty;
-  cout << "Enter Your branch : ";
-  cin  >> branch;
-  student_id_count++;
-  student_name[student_id_count-1] = name;
-  student_id[student_id_count-1] = id;
-  student_faculty[student_id_count-1] = faculty;
-  student_branch[student_id_count-1] = branch;
-  cout << endl;
+	 string name; 
+	 int id;
+	 string faculty; 
+	 string branch;  
+	 cout << "Enter Your name : ";
+	 cin  >> name;
+	 cout << "Enter Your student code : ";
+	 cin  >> id;
+	 cout << "Enter Your faculty : ";
+	  cin  >> faculty;
+	  cout << "Enter Your branch : ";
+	  cin  >> branch;
+	 int test = 1;
+	 for (int n = 0;n < student_id_count ; n++){
+		  if(id == student_id[n]){
+			  test++;
+		  }
+	 }
+	 if(test == 1){
+		 student_id_count++;
+		 student_name[student_id_count-1] = name;
+		 student_id[student_id_count-1] = id;
+		 student_faculty[student_id_count-1] = faculty;
+		 student_branch[student_id_count-1] = branch;
+	   	cout << endl;
+	 }else{   
+		cout << "can't use student it!" <<endl;
+	  }
+ 
 }
 
 void book_input(long book_id[10], string book_name[10], string book_author[10], string book_publish[10],int &book_count )
@@ -204,7 +216,8 @@ void send_book(long lend_student_id[100],long lend_book_id[100],int lend_count,b
 	bool check = false;
 	cout << "Input student_id for send_book : ";
 	cin >> student_id;
-	cout << "Input book_id for send_book : ";
+	do{
+	cout << "Input book_id for send_book ( 0 to exit) : ";
 	cin >> book_id;
 	for(int n = 0 ; n < lend_count ; n++){
 		if(student_id == lend_student_id[n] && book_id == lend_book_id[n]){
@@ -229,52 +242,55 @@ void send_book(long lend_student_id[100],long lend_book_id[100],int lend_count,b
 		cout << "success send_book " <<endl;
 		cout << "==============================" << endl;
 	}
+	}while(book_id != 0);
 	cout << endl;
 }
 
 void report(long student_id[10], string student_name[10],string student_faculty[10],string student_branch[10],long book_id[10],string book_name[10],string book_author[10],
 string book_publish[10],int book_year[100],long lend_student_id[100],long lend_book_id[100],bool lend_check[100],int student_id_count,
 int book_count ,int lend_count){
-	cout << "==================================================" << endl;
-	cout << "	report lend book" << endl;
-	cout << "==================================================" << endl;
-	cout << "student_name\t\tbook_id\t\t\tcheck" << endl;
-	cout << "==================================================" << endl;
+	cout << setfill('=') << setw(100) <<"="<<setfill(' ') <<endl;
+	cout << setw(60) << "report lend book" << endl;
+	cout << setfill('=') << setw(100)<<"="<< endl;
+	cout << setfill(' ')<<setw(10)<< "student code"<<setw(15)<< "student_name"<<setw(15)<<"faculty"<<setw(15)<<"branch"<<setw(13)<<"book id"<<setw(15)<<"book name"<<setw(15)<<"check" << endl;
+	cout << setfill('-') << setw(100)<<"-" << setfill(' ')<< endl;
 	for( int n = 0 ; n < lend_count;n++){
 		for(int i = 0;i < student_id_count; i++){
 			for(int a = 0;a < book_count; a++){
 			if(student_id[i] == lend_student_id[n] && lend_book_id[n] == book_id[a]){
-				cout << student_name[i] << "		" << book_name[a] << "		" << (bool)lend_check[n] << endl;
+				cout << setw(10)<<student_id[i]<<setw(15)<<student_name[i]<<setw(15)<< student_faculty[i] << setw(15)<< student_branch[i] << setw(15)<< book_id[a] <<setw(17)<< book_name[a] <<  setw(12)<<  boolalpha << lend_check[n] << endl;
 				}
 			}
 		}
 	}
-	cout << "===================================================" << endl;
-	cout << "	report student lend" << endl;
-	cout << "===================================================" << endl;
-	cout << "student_name\t\tbook_id\t\t\tcheck" << endl;
-	cout << "===================================================" << endl;
+	cout << endl << endl;
+	cout << setfill('=') << setw(100) <<"="<<setfill(' ') << endl;
+	cout << setw(60)<<"report student lend  " << endl;
+	cout << setfill('=') << setw(100)<<"=" << endl;
+	cout << setfill(' ')<< setw(10)<<"student code"<<setw(15)<< "student_name"<<setw(15)<<"faculty"<<setw(15)<<"branch"<< setw(13)<<"book id"<< setw(15)<<"book name"<<setw(15)<<"check" << endl;
+	cout << setfill('-') << setw(100)<<"-" << setfill(' ')<< endl;
 	for(int i = 0;i < student_id_count; i++){
 		for( int n = 0 ; n < lend_count;n++){
 			for(int a = 0;a < book_count; a++){
 			if(student_id[i] == lend_student_id[n] && lend_book_id[n] == book_id[a]){
-				cout << student_name[i] << "		" << book_name[a] << "		" <<(bool)lend_check[n] << endl;
+				cout << setw(10)<<student_id[i]<<setw(15)<<student_name[i]<<setw(15)<< student_faculty[i] << setw(15)<< student_branch[i]<< setw(15)<< book_id[a] <<setw(17)<< book_name[a] << setw(12)<< boolalpha <<lend_check[n] << endl;
 				}
 			}
 		}	
-		cout << "-------------------------------------------------" <<endl;
+		cout << setfill('-') << setw(100) <<"-" << setfill(' ') << endl;
 	}
-	cout << "====================================================" << endl;
-	cout << "	report book not yet lend" << endl;
-	cout << "====================================================" << endl;
-	cout << "student_name\t\tbook_id\t\t\tcheck" << endl;
-	cout << "====================================================" << endl;
+	cout << endl << endl;
+	cout << setfill('=') << setw(100)<<"="<<setfill(' ')  << endl;
+	cout << setw(60) << "report book not yet lend" << endl;
+	cout << setfill('=') << setw(100)<<"=" << endl;
+	cout << setfill(' ')<<setw(10)<<"student code"<<setw(15)<< "student_name"<<setw(15)<<"faculty"<<setw(15)<<"branch"<< setw(13)<<"book id"<< setw(15)<<"book name"<<setw(15)<<"check" << endl;
+	cout << setfill('-') << setw(100)<<"-" << setfill(' ') << endl;
 	for( int n = 0 ; n < lend_count;n++){
 		for(int i = 0;i < student_id_count; i++){
 			for(int a = 0;a < book_count; a++){
 			if(student_id[i] == lend_student_id[n]  && lend_book_id[n] == book_id[a]){
 					if(lend_check[n] == false){	
-					cout << student_name[i] << "		" <<  book_name[a] << "		" << (bool)lend_check[n] << endl;
+					cout <<setw(10)<<student_id[i]<<setw(15)<< student_name[i]<<setw(15)<< student_faculty[i] << setw(15)<< student_branch[i]<< setw(15)<< book_id[a] <<setw(17)<< book_name[a]  <<  setw(12)<< boolalpha <<lend_check[n] << endl;
 					}
 				}
 			}
