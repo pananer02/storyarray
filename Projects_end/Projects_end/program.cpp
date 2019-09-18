@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <ctime>
 using namespace std;
 
 void lend_book(long student_id[10],long book_id[10],long lend_student_id[100],long lend_book_id[100],
@@ -73,6 +74,14 @@ int main(){
 	lend_check[0] = false;
 	lend_check[1] = true;
 
+	time_t now =time(0);
+	tm *ltm = localtime(&now);
+	int year = 1900+ltm->tm_year;
+	int month =  1 + ltm->tm_mon;
+	int day = ltm->tm_mday;
+	string lend_day[100];
+	cout <<lend_day[0] << endl;
+	
 	int choose;
 	do{
 		cout << "========Main Program=========" <<endl;
