@@ -4,27 +4,27 @@
 #include <ctime>
 using namespace std;
 
-void lend_book(long student_id[10],long book_id[10],long lend_student_id[100],long lend_book_id[100],
+void lend_book(string student_id[10],string book_id[10],string lend_student_id[100],string lend_book_id[100],
 int student_id_count,int book_count,bool lend_check[100],int &lend_count);
 
-void book_input(long book_id[10], string book_name[10], string book_author[10], string book_publish[10],int &book_count);
+void book_input(string book_id[10], string book_name[10], string book_author[10], string book_publish[10],int &book_count);
 
-void student_information (string student_name[10] , long student_id[10] , string student_faculty [10] , string student_branch[10],
+void student_information (string student_name[10] , string student_id[10] , string student_faculty [10] , string student_branch[10],
 int &student_id_count);
 
-void send_book(long lend_student_id[100],long lend_book_id[100],int lend_count,bool lend_check[100]);
+void send_book(string lend_student_id[100],string lend_book_id[100],int lend_count,bool lend_check[100]);
 
-void report(long student_id[10], string student_name[10],string student_faculty[10],string student_branch[10],long book_id[10],string book_name[10],string book_author[10],
-string book_publish[10],int book_year[100],long lend_student_id[100],long lend_book_id[100],bool lend_check[100],int student_id_count,
+void report(string student_id[10], string student_name[10],string student_faculty[10],string student_branch[10],string book_id[10],string book_name[10],string book_author[10],
+string book_publish[10],int book_year[100],string lend_student_id[100],string lend_book_id[100],bool lend_check[100],int student_id_count,
 int book_count ,int lend_count);
 
 int main(){
 
 	int student_id_count = 2;
 
-	long student_id[10];
-	student_id[0] = 100001;
-	student_id[1] = 100002;
+	string student_id[10];
+	student_id[0] = "100001";
+	student_id[1] = "100002";
 	
 	string student_name[10];
 	student_name[0] = "Panachai";
@@ -40,9 +40,9 @@ int main(){
 	
 	int book_count = 2;
 
-	long book_id[10];
-	book_id[0] = 123001;
-	book_id[1] = 123002;
+	string book_id[10];
+	book_id[0] = "123001";
+	book_id[1] = "123002";
 
 	string book_name[10];
 	book_name[0] = "Programming";
@@ -62,18 +62,18 @@ int main(){
 
 	int lend_count = 2;
 
-	long lend_student_id[100];
-	lend_student_id[0] = 100001;
-	lend_student_id[1] = 100002;
+	string lend_student_id[100];
+	lend_student_id[0] = "100001";
+	lend_student_id[1] = "100002";
 
-	long lend_book_id[100];
-	lend_book_id[0] = 123002;
-	lend_book_id[1] = 123001;
+	string lend_book_id[100];
+	lend_book_id[0] = "123002";
+	lend_book_id[1] = "123001";
 
 	bool lend_check[100];
 	lend_check[0] = false;
 	lend_check[1] = true;
-
+	/*
 	time_t now =time(0);
 	tm *ltm = localtime(&now);
 	int year = 1900+ltm->tm_year;
@@ -81,7 +81,7 @@ int main(){
 	int day = ltm->tm_mday;
 	string lend_day[100];
 	cout <<lend_day[0] << endl;
-	
+	*/
 	int choose;
 	do{
 		cout << "========Main Program=========" <<endl;
@@ -111,12 +111,12 @@ int main(){
 	}while(choose != 6);
 }
 
-void lend_book(long student_id[10],long book_id[10],long lend_student_id[100],long lend_book_id[100],int student_id_count,int book_count,bool lend_check[100],int &lend_count){
-	long id;
+void lend_book(string student_id[10],string book_id[10],string lend_student_id[100],string lend_book_id[100],int student_id_count,int book_count,bool lend_check[100],int &lend_count){
+	string id;
 	cout << "Input user student_id : ";
 	cin >> id;
 	int choose = 0;
-	long lend_book;
+	string lend_book;
 	for(int n = 0; n < student_id_count;n++){
 		if(id == student_id[n]){
 			choose++; 
@@ -135,7 +135,7 @@ void lend_book(long student_id[10],long book_id[10],long lend_student_id[100],lo
 		cout << "===============================" << endl;
 		cout << "input lend book (0 = exit): ";
 		cin >> lend_book;
-		if(lend_book == 0){
+		if(lend_book == "0"){
 			cout << "Your lend " << time << " time " << endl;
 			return;
 		}
@@ -166,45 +166,66 @@ void lend_book(long student_id[10],long book_id[10],long lend_student_id[100],lo
 	cout << endl;
 }
 
-void student_information (string student_name[10] , long student_id[10] , string student_faculty [10] , string student_branch[10], int &student_id_count)
+void student_information (string student_name[10] , string student_id[10] , string student_faculty [10] , string student_branch[10], int &student_id_count)
 {
+	 int test = 1;
 	 string name; 
-	 int id;
+	 string id;
 	 string faculty; 
 	 string branch;  
 	 cout << "Enter Your name : ";
 	 cin  >> name;
 	 cout << "Enter Your student code : ";
 	 cin  >> id;
-	 cout << "Enter Your faculty : ";
-	  cin  >> faculty;
-	  cout << "Enter Your branch : ";
-	  cin  >> branch;
-	 int test = 1;
-	 for (int n = 0;n < student_id_count ; n++){
-		  if(id == student_id[n]){
-			  test++;
-		  }
+	 bool testnum = true;
+	 for(int n = 0;n < id.length();n++){
+		 if(isdigit(id.at(n))){
+		 }
+		 else{
+			 testnum = false;
+		 }
 	 }
-	 if(test == 1){
-		 student_id_count++;
-		 student_name[student_id_count-1] = name;
-		 student_id[student_id_count-1] = id;
-		 student_faculty[student_id_count-1] = faculty;
-		 student_branch[student_id_count-1] = branch;
-	   	cout << endl;
-	 }else{   
-		cout << "can't use student it!" <<endl;
-	  }
+	 if(testnum){
+		for(int a = 0;a < student_id_count;a++){
+			 if(id == student_id[a]){
+				 test++;
+			 }
+		 }
+		 if(test == 1){
+			 student_id_count++;
+			 student_name[student_id_count-1] = name;
+			 student_id[student_id_count-1] = id;
+			 cout << "Enter Your faculty : ";
+			 cin  >> faculty;
+			 cout << "Enter Your branch : ";
+			 cin  >> branch;
+			 student_faculty[student_id_count-1] = faculty;
+			 student_branch[student_id_count-1] = branch;
+		  	 cout << endl;
+		 }else{   
+			cout << "can't use student it!" <<endl;
+		 }
+	 }else{
+		 cout <<"Error input id student" <<endl;
+	 }
  
 }
 
-void book_input(long book_id[10], string book_name[10], string book_author[10], string book_publish[10],int &book_count )
+void book_input(string book_id[10], string book_name[10], string book_author[10], string book_publish[10],int &book_count )
 {  
-	long id;
+	string id;
 	string name2, author, publish;
 	cout << "Enter book id : ";
 	cin >> id;
+	bool testnum = true;
+	for(int n = 0;n < id.length();n++){
+		 if(isdigit(id.at(n))){
+		 }
+		 else{
+			 testnum = false;
+		 }
+	 }
+	 if(testnum){
 	cout << "Enter book name : ";
 	cin >> name2;
 	cout << "Enter book author : ";
@@ -217,11 +238,14 @@ void book_input(long book_id[10], string book_name[10], string book_author[10], 
 	book_author[book_count-1]=author;
 	book_publish[book_count-1]=publish;
 	cout << endl;
+	 }else{
+		 cout << "Error Input book it " <<endl;
+	 }
 }
 
-void send_book(long lend_student_id[100],long lend_book_id[100],int lend_count,bool lend_check[100]){
-	long student_id;
-	long book_id;
+void send_book(string lend_student_id[100],string lend_book_id[100],int lend_count,bool lend_check[100]){
+	string student_id;
+	string book_id;
 	bool check = false;
 	cout << "Input student_id for send_book : ";
 	cin >> student_id;
@@ -251,12 +275,12 @@ void send_book(long lend_student_id[100],long lend_book_id[100],int lend_count,b
 		cout << "success send_book " <<endl;
 		cout << "==============================" << endl;
 	}
-	}while(book_id != 0);
+	}while(book_id != "0");
 	cout << endl;
 }
 
-void report(long student_id[10], string student_name[10],string student_faculty[10],string student_branch[10],long book_id[10],string book_name[10],string book_author[10],
-string book_publish[10],int book_year[100],long lend_student_id[100],long lend_book_id[100],bool lend_check[100],int student_id_count,
+void report(string student_id[10], string student_name[10],string student_faculty[10],string student_branch[10],string book_id[10],string book_name[10],string book_author[10],
+string book_publish[10],int book_year[100],string lend_student_id[100],string lend_book_id[100],bool lend_check[100],int student_id_count,
 int book_count ,int lend_count){
 	cout << setfill('=') << setw(100) <<"="<<setfill(' ') <<endl;
 	cout << setw(60) << "report lend book" << endl;

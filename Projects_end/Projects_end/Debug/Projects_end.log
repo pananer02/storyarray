@@ -1,16 +1,20 @@
-﻿Build started 9/18/2019 5:22:44 PM.
+﻿Build started 9/18/2019 9:09:19 PM.
      1>Project "D:\clone\storyarray\Projects_end\Projects_end\Projects_end.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Projects_end.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt program.cpp
-         program.cpp
-     1>d:\clone\storyarray\projects_end\projects_end\program.cpp(78): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\time.inl(112) : see declaration of 'localtime'
-     1>d:\clone\storyarray\projects_end\projects_end\program.cpp(83): error C2440: 'type cast' : cannot convert from 'long' to 'std::string'
-                 No constructor could take the source type, or constructor overload resolution was ambiguous
-     1>Done Building Project "D:\clone\storyarray\Projects_end\Projects_end\Projects_end.vcxproj" (build target(s)) -- FAILED.
+         All outputs are up-to-date.
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         All outputs are up-to-date.
+       Manifest:
+         All outputs are up-to-date.
+       FinalizeBuildStatus:
+         Deleting file "Debug\Projects_end.unsuccessfulbuild".
+         Touching "Debug\Projects_end.lastbuildstate".
+     1>Done Building Project "D:\clone\storyarray\Projects_end\Projects_end\Projects_end.vcxproj" (build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:00.63
+Time Elapsed 00:00:00.08
