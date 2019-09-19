@@ -1,4 +1,4 @@
-﻿Build started 9/18/2019 9:09:19 PM.
+﻿Build started 9/20/2019 12:52:25 PM.
      1>Project "D:\clone\storyarray\Projects_end\Projects_end\Projects_end.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Projects_end.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -17,4 +17,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.08
+Time Elapsed 00:00:00.41
