@@ -89,11 +89,7 @@ int main(){
 	time_out[2] = "September 14 2019";
 
 	int choose;
-	do{
-		for(int n = 0 ; n < lend_count;n++){
-		cout <<time_in[n] <<"   "<<time_out[n]<<endl;
-		}
-		
+	do{		
 		cout << "========Main Program=========" <<endl;
 		cout << "1 ) register student " << endl;
 		cout << "2 ) register book " << endl;
@@ -124,10 +120,7 @@ int main(){
 void lend_book(string student_id[10],string book_id[10],string lend_student_id[100],string lend_book_id[100],
 int student_id_count,int book_count,bool lend_check[100],int book_item[10],int &lend_count,string time_out[100],string time_in[100]){
 	char date_string[100];
-<<<<<<< HEAD
-=======
 	char time_string[100];
->>>>>>> master
 	time_t curr_time;
 	tm * curr_tm;
 	curr_time = time(NULL);
@@ -287,7 +280,6 @@ void book_input(string book_id[10], string book_name[10], string book_author[10]
 }
 
 void send_book(string lend_student_id[100],string lend_book_id[100],int lend_count,bool lend_check[100],string book_id[10],int book_item[10],int book_count,string time_out[100]){
-<<<<<<< HEAD
 	char date_string[100];
 	time_t curr_time;
 	tm * curr_tm;
@@ -295,10 +287,8 @@ void send_book(string lend_student_id[100],string lend_book_id[100],int lend_cou
 	char *tm = ctime(&curr_time);
 	curr_tm = localtime(&curr_time);
 	strftime(date_string, 50, " %B %d, %Y", curr_tm);
-=======
 	time_t t;
 	time(&t);
->>>>>>> master
 	string student_id;
 	string book_id_send;
 	bool check = false;
@@ -324,11 +314,8 @@ void send_book(string lend_student_id[100],string lend_book_id[100],int lend_cou
 						book_item[i]++;
 					}
 				}
-<<<<<<< HEAD
 				time_out[n] = date_string;
-=======
 				time_out[n] = ctime(&t);
->>>>>>> master
 				lend_check[n] = true;
 				check = true;
 			}
@@ -370,11 +357,7 @@ int book_count ,int lend_count,int book_item[10],string time_out[100],string tim
 	cout << setfill('=') << setw(165) <<"="<<setfill(' ') << endl;
 	cout << setw(60)<<"report student lend  " << endl;
 	cout << setfill('=') << setw(165)<<"=" << endl;
-<<<<<<< HEAD
 	cout << setfill(' ')<<setw(10)<< "student code"<<setw(15)<< "student_name"<<setw(10)<<"faculty"<<setw(10)<<"branch"<<setw(15)<<"book id"<<setw(15)<<"book name"<<setw(10)<<"check" << setw(20) << "day lend" << setw(30) <<"day send" <<endl;
-=======
-	cout << setfill(' ')<<setw(10)<< "student code"<<setw(15)<< "student_name"<<setw(10)<<"faculty"<<setw(10)<<"branch"<<setw(15)<<"book id"<<setw(15)<<"book name"<<setw(10)<<"check" << setw(20) << "time lend" << setw(30) <<"time send" <<endl;
->>>>>>> master
 	cout << setfill('-') << setw(165)<<"-" << setfill(' ')<< endl;
 	for(int i = 0;i < student_id_count; i++){
 		for( int n = 0 ; n < lend_count;n++){
@@ -391,11 +374,8 @@ int book_count ,int lend_count,int book_item[10],string time_out[100],string tim
 	cout << setfill('=') << setw(165)<<"="<<setfill(' ')  << endl;
 	cout << setw(60) << "report book not yet lend" << endl;
 	cout << setfill('=') << setw(165)<<"=" << endl;
-<<<<<<< HEAD
-cout << setfill(' ')<<setw(10)<< "student code"<<setw(15)<< "student_name"<<setw(10)<<"faculty"<<setw(10)<<"branch"<<setw(15)<<"book id"<<setw(15)<<"book name"<<setw(10)<<"check" << setw(20) << "day lend" << setw(30) <<"day send" <<endl;
-=======
-cout << setfill(' ')<<setw(10)<< "student code"<<setw(15)<< "student_name"<<setw(10)<<"faculty"<<setw(10)<<"branch"<<setw(15)<<"book id"<<setw(15)<<"book name"<<setw(10)<<"check" << setw(20) << "time lend" << setw(30) <<"time send" <<endl;
->>>>>>> master
+	cout << setfill(' ')<<setw(10)<< "student code"<<setw(15)<< "student_name"<<setw(10)<<"faculty"<<setw(10)<<"branch"<<setw(15)<<"book id"<<setw(15)<<"book name"<<setw(10)<<"check" << setw(20) << "day lend" << setw(30) <<"day send" <<endl;
+	cout << setfill(' ')<<setw(10)<< "student code"<<setw(15)<< "student_name"<<setw(10)<<"faculty"<<setw(10)<<"branch"<<setw(15)<<"book id"<<setw(15)<<"book name"<<setw(10)<<"check" << setw(20) << "time lend" << setw(30) <<"time send" <<endl;
 	cout << setfill('-') << setw(165)<<"-" << setfill(' ') << endl;
 	for( int n = 0 ; n < lend_count;n++){
 		for(int i = 0;i < student_id_count; i++){
