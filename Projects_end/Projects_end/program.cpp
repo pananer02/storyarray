@@ -375,7 +375,6 @@ int book_count ,int lend_count,int book_item[10],string time_out[100],string tim
 	cout << setw(60) << "report book not yet lend" << endl;
 	cout << setfill('=') << setw(165)<<"=" << endl;
 	cout << setfill(' ')<<setw(10)<< "student code"<<setw(15)<< "student_name"<<setw(10)<<"faculty"<<setw(10)<<"branch"<<setw(15)<<"book id"<<setw(15)<<"book name"<<setw(10)<<"check" << setw(20) << "day lend" << setw(30) <<"day send" <<endl;
-	cout << setfill(' ')<<setw(10)<< "student code"<<setw(15)<< "student_name"<<setw(10)<<"faculty"<<setw(10)<<"branch"<<setw(15)<<"book id"<<setw(15)<<"book name"<<setw(10)<<"check" << setw(20) << "time lend" << setw(30) <<"time send" <<endl;
 	cout << setfill('-') << setw(165)<<"-" << setfill(' ') << endl;
 	for( int n = 0 ; n < lend_count;n++){
 		for(int i = 0;i < student_id_count; i++){
