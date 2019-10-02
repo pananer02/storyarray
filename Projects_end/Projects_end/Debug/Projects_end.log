@@ -1,4 +1,4 @@
-﻿Build started 10/1/2019 2:22:25 PM.
+﻿Build started 10/2/2019 12:39:01 AM.
      1>Project "D:\clone\storyarray\Projects_end\Projects_end\Projects_end.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Projects_end.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -16,8 +16,6 @@
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\time.inl(86) : see declaration of 'ctime'
      1>d:\clone\storyarray\projects_end\projects_end\program.cpp(288): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\time.inl(112) : see declaration of 'localtime'
-     1>d:\clone\storyarray\projects_end\projects_end\program.cpp(318): warning C4996: 'ctime': This function or variable may be unsafe. Consider using ctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\time.inl(86) : see declaration of 'ctime'
        ManifestResourceCompile:
          All outputs are up-to-date.
        Link:
@@ -36,4 +34,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.06
+Time Elapsed 00:00:01.85

@@ -78,17 +78,17 @@ int main(){
 	lend_check[2] = true;
 
 	string time_in[100];
-	time_in[0] = "September 1 2019";
-	time_in[1] = "September 13 2019";
-	time_in[2] = "September 4 2019";
+	time_in[0] = "September 1 ,2019";
+	time_in[1] = "September 13 ,2019";
+	time_in[2] = "September 4 ,2019";
 
 
 	string time_out[100];
 	time_out[0] = "-";
-	time_out[1] = "September 15 2019";
-	time_out[2] = "September 14 2019";
+	time_out[1] = "September 15 ,2019";
+	time_out[2] = "September 14 ,2019";
 
-	int choose;
+	string choose;
 	do{		
 		cout << "========Main Program=========" <<endl;
 		cout << "1 ) register student " << endl;
@@ -99,22 +99,22 @@ int main(){
 		cout << "6 ) Exit " << endl;
 		cout << "choose program for work  : ";
 		cin >> choose;
-		if(choose == 1){
+		if(choose == "1"){
 			student_information (student_name,student_id,student_faculty , student_branch,student_id_count);
 		}
-		else if(choose ==2){
+		else if(choose =="2"){
 			book_input(book_id, book_name,book_author,book_publish,book_item,book_count);
 		}
-		else if(choose == 3){
+		else if(choose == "3"){
 			lend_book(student_id,book_id,lend_student_id,lend_book_id,student_id_count,book_count,lend_check,book_item,lend_count,time_out,time_in);
 		}
-		else if(choose == 4){
+		else if(choose == "4"){
 			send_book(lend_student_id,lend_book_id,lend_count,lend_check,book_id,book_item,book_count,time_out);
 		}
-		else if(choose == 5){
+		else if(choose == "5"){
 			report(student_id,student_name,student_faculty, student_branch, book_id, book_name, book_author,book_publish,lend_student_id,lend_book_id, lend_check,student_id_count,book_count ,lend_count,book_item,time_out, time_in);
 		}
-	}while(choose != 6);
+	}while(choose != "6");
 }
 
 void lend_book(string student_id[10],string book_id[10],string lend_student_id[100],string lend_book_id[100],
@@ -315,7 +315,6 @@ void send_book(string lend_student_id[100],string lend_book_id[100],int lend_cou
 					}
 				}
 				time_out[n] = date_string;
-				time_out[n] = ctime(&t);
 				lend_check[n] = true;
 				check = true;
 			}
